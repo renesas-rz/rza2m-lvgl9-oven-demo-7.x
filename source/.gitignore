@@ -1,0 +1,4 @@
+build/
+*.o
+oven_a2m
+*.bin

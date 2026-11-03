@@ -1,0 +1,130 @@
+<widget>
+	<previews>
+		<preview height="600" width="600" style_bg_color="0x453" />
+	</previews>
+	<styles>
+		<style
+			name="style_selector"
+			width="480"
+			height="600"
+			bg_color="0xEEB111"
+			pad_all="0"
+			radius="0"
+			border_width="0"
+			text_font="Roboto_Medium_100"
+			text_color="0xFFFFFF"
+		/>
+		<style
+			name="style_bars"
+			width="496"
+			height="128"
+			radius="0"
+			border_width="8"
+			bg_opa="0"
+			border_color="0xffffff"
+			pad_all="0"
+		/>
+		<style
+			name="style_roller"
+			width="196"
+			height="600"
+			bg_color="0xEEB111"
+			radius="0"
+			border_width="0"
+			text_color="0xececec"
+			text_font="Roboto_Medium_100"
+			text_line_space="50"
+			pad_all="0"
+		/>
+		<style name="style_roller_selected" height="112" bg_opa="0" border_width="0" text_color="0xFFFFFF" />
+		<style
+			name="style_button_set"
+			width="209"
+			height="64"
+			border_width="0"
+			radius="8"
+			text_font="Roboto_Medium_30"
+			pad_all="0"
+			shadow_width="50"
+			shadow_spread="50"
+			shadow_color="0xEEB111"
+		/>
+		<style name="style_button_click" bg_color="0xf6cb5f" />
+	</styles>
+	<api>
+		<prop
+			name="bind_time"
+			type="subject"
+			help="The subject that holds the time value, to be bound to the rollers"
+		/>
+		<prop
+			name="bind_button_set"
+			type="subject"
+			help="The subject that to be triggered when set button is clicked"
+		/>
+	</api>
+	<view scrollable="false">
+		<style name="style_selector" />
+		<lv_obj>
+			<style name="style_selector" />
+
+			<lv_roller
+				name="roller_hour"
+				options="00&#10;01&#10;02&#10;03&#10;04&#10;05&#10;06&#10;07&#10;08&#10;09&#10;10&#10;11&#10;12&#10;13&#10;14&#10;15&#10;16&#10;17&#10;18&#10;19&#10;20&#10;21&#10;22&#10;23"
+				options-mode="infinite"
+			>
+				<style name="style_roller" />
+				<style name="style_roller_selected" selector="selected" />
+			</lv_roller>
+
+			<lv_roller
+				name="roller_minute"
+				options="00&#10;01&#10;02&#10;03&#10;04&#10;05&#10;06&#10;07&#10;08&#10;09&#10;10&#10;11&#10;12&#10;13&#10;14&#10;15&#10;16&#10;17&#10;18&#10;19&#10;20&#10;21&#10;22&#10;23&#10;24&#10;25&#10;26&#10;27&#10;28&#10;29&#10;30&#10;31&#10;32&#10;33&#10;34&#10;35&#10;36&#10;37&#10;38&#10;39&#10;40&#10;41&#10;42&#10;43&#10;44&#10;45&#10;46&#10;47&#10;48&#10;49&#10;50&#10;51&#10;52&#10;53&#10;54&#10;55&#10;56&#10;57&#10;58&#10;59"
+				options-mode="infinite"
+				x="202"
+			>
+				<style name="style_roller" />
+				<style name="style_roller_selected" selector="selected" />
+			</lv_roller>
+
+			<lv_label align="left_mid" x="155" text="h" />
+			<lv_label align="left_mid" x="355" text="m" />
+		</lv_obj>
+
+		<lv_obj align="center" clickable="false">
+			<style name="style_bars" />
+		</lv_obj>
+
+		<lv_obj
+			width="480"
+			align="top_mid"
+			style_bg_color="0xEEB111"
+			style_bg_opa="200"
+			style_shadow_opa="200"
+			style_border_width="-1"
+			style_border_opa="255"
+			style_border_color="0xEEB111"
+		>
+			<style name="style_button_set" />
+		</lv_obj>
+
+		<lv_obj
+			width="480"
+			align="bottom_mid"
+			style_bg_color="0xEEB111"
+			style_bg_opa="205"
+			style_shadow_opa="205"
+			style_border_width="-1"
+			style_border_opa="255"
+			style_border_color="0xEEB111"
+		>
+			<style name="style_button_set" />
+		</lv_obj>
+
+		<lv_obj name="button_set" y="496" align="top_mid">
+			<style name="style_button_set" />
+			<style name="style_button_click" selector="pressed" />
+			<lv_label text="Set" align="center" />
+		</lv_obj>
+	</view>
+</widget>

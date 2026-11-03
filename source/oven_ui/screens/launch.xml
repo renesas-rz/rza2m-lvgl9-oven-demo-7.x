@@ -1,0 +1,11 @@
+<screen>
+	<styles>
+		<style name="style_main" bg_color="0x000000" />
+	</styles>
+	<view>
+		<style name="style_main" />
+		<lv_image src="whirlpool_logo" align="center" />
+
+		<screen_create_event screen="meals" anim_type="fade_in" delay="3000" duration="500" trigger="screen_loaded" />
+	</view>
+</screen>

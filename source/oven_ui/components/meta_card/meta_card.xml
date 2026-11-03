@@ -1,0 +1,35 @@
+<component>
+	<previews>
+		<preview style_bg_color="0x034543" />
+	</previews>
+	<styles>
+		<style
+			name="style_meta"
+			width="154"
+			height="122"
+			bg_color="0x000000"
+			bg_opa="32%"
+			border_width="1"
+			border_opa="40%"
+			border_color="0xeeb111"
+			radius="20"
+			pad_all="20"
+			layout="flex"
+			flex_flow="column"
+			flex_main_place="space_between"
+			text_color="0xffffff"
+			text_font="Roboto_Bold_15"
+		/>
+	</styles>
+	<api>
+		<prop name="icon" type="image" default="clock_icon" />
+		<prop name="title" type="string" default="Cooking time" />
+		<prop name="value" type="subject" />
+	</api>
+	<view scrollable="false">
+		<style name="style_meta" />
+		<lv_image src="$icon" />
+		<lv_label text="$title" style_text_font="Roboto_Regular_15" style_pad_top="5" />
+		<lv_label bind_text="$value" />
+	</view>
+</component>

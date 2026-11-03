@@ -1,0 +1,22 @@
+<component>
+	<styles>
+		<style
+			name="style_button_set"
+			width="209"
+			height="64"
+			border_width="0"
+			radius="8"
+			text_font="Roboto_Medium_30"
+			pad_all="0"
+			shadow_width="80"
+			shadow_spread="80"
+			shadow_color="0xEEB111"
+		/>
+		<style name="style_button_click" bg_color="0xf6cb5f" />
+	</styles>
+	<view>
+		<style name="style_button_set" />
+		<style name="style_button_click" selector="pressed" />
+		<lv_label text="Set" align="center" />
+	</view>
+</component>

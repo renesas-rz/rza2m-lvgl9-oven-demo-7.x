@@ -1,0 +1,89 @@
+<widget>
+	<previews>
+		<preview height="600" width="400" style_bg_color="0x453" />
+	</previews>
+	<styles>
+		<style
+			name="style_cook_mode"
+			width="378"
+			height="600"
+			bg_color="0xEEB111"
+			pad_all="0"
+			radius="0"
+			border_width="0"
+		/>
+		<style name="style_mode_cont" layout="flex" flex_flow="column" pad_row="10" />
+		<style
+			name="style_bars"
+			width="394"
+			height="128"
+			radius="0"
+			border_width="8"
+			bg_opa="0"
+			border_color="0xffffff"
+			pad_all="0"
+		/>
+		<style
+			name="style_overlay"
+			width="content"
+			height="content"
+			radius="0"
+			border_width="0"
+			bg_color="0x000000"
+			bg_opa="150"
+			pad_all="0"
+		/>
+		<style
+			name="style_button_set"
+			width="378"
+			height="64"
+			border_width="0"
+			radius="8"
+			text_font="Roboto_Medium_30"
+			pad_all="0"
+			shadow_width="50"
+			shadow_spread="50"
+			shadow_color="0xEEB111"
+		/>
+	</styles>
+	<api>
+		<prop name="bind_cook_mode" type="subject" help="The subject that holds the cook mode icon" />
+		<prop
+			name="bind_button_set"
+			type="subject"
+			help="The subject that to be triggered when set button is clicked"
+		/>
+	</api>
+	<view scrollable="false">
+		<style name="style_cook_mode" />
+		<lv_obj name="mode_cont" scrollbar_mode="off" scroll_snap_y="center">
+			<style name="style_cook_mode" />
+			<style name="style_mode_cont" />
+			<mode_item icon="conventional_icon" text="Conventional Cooking" />
+			<mode_item icon="defrost_icon" text="Defrost" />
+			<mode_item icon="grill_icon" text="Grill" />
+			<mode_item icon="turbo_grill_icon" text="Turbo Grilling" />
+			<mode_item icon="moist_fan_icon" text="Moist Fan Baking" />
+			<mode_item icon="true_fan_icon" text="True Fan Cooking" />
+			<mode_item icon="bottom_heat_icon" text="Bottom Heat" />
+		</lv_obj>
+
+		<lv_obj
+			align="top_mid"
+			style_bg_color="0xEEB111"
+			style_bg_opa="200"
+			style_shadow_opa="200"
+			style_border_width="-1"
+			style_border_opa="255"
+			style_border_color="0xEEB111"
+		>
+			<style name="style_button_set" />
+		</lv_obj>
+
+		<lv_obj align="center" clickable="false">
+			<style name="style_bars" />
+		</lv_obj>
+
+		<button_set name="button_set" align="bottom_mid" y="-40" />
+	</view>
+</widget>

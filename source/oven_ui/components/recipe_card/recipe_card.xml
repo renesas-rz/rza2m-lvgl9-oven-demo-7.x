@@ -1,0 +1,82 @@
+<component>
+	<previews>
+		<preview height="480" width="300" style_bg_color="0x000000" />
+	</previews>
+	<styles>
+		<style
+			name="style_card"
+			width="300"
+			height="480"
+			radius="60"
+			border_width="0"
+			pad_all="0"
+			text_color="0xffffff"
+			bg_opa="0"
+		/>
+		<style
+			name="style_cover"
+			width="300"
+			height="480"
+			radius="60"
+			bg_color="0x000000"
+			bg_opa="0"
+			border_width="0"
+			pad_top="40"
+			pad_bottom="40"
+			pad_left="32"
+			pad_right="32"
+			layout="flex"
+			flex_flow="column"
+			flex_main_place="end"
+			text_color="0xffffff"
+		/>
+		<style
+			name="style_cont"
+			width="content"
+			height="38"
+			pad_all="0"
+			pad_column="4"
+			border_width="0"
+			bg_opa="0"
+			layout="flex"
+			flex_track_place="center"
+			flex_cross_place="center"
+		/>
+		<style
+			name="style_text_cont"
+			width="content"
+			height="100%"
+			radius="0"
+			border_width="0"
+			pad_all="0"
+			bg_opa="0"
+			layout="flex"
+			flex_flow="column"
+			flex_main_place="space_between"
+			text_font="Roboto_Bold_15"
+			text_color="0xffffff"
+		/>
+	</styles>
+	<api>
+		<prop name="title" type="string" />
+		<prop name="time" type="string" />
+		<prop name="bg_image" type="image" default="chicken" />
+	</api>
+	<view scrollable="false">
+		<style name="style_card" />
+		<lv_image src="$bg_image" align="center" />
+		<lv_obj clickable="false">
+			<style name="style_cover" />
+			<lv_label text="$title" width="100%" style_text_font="Roboto_Medium_30" />
+			<lv_obj clickable="false">
+				<style name="style_cont" />
+				<lv_image src="clock_small_icon" />
+				<lv_obj clickable="false">
+					<style name="style_text_cont" />
+					<lv_label text="Cooking time" style_text_font="Roboto_Medium_15" />
+					<lv_label text="$time" />
+				</lv_obj>
+			</lv_obj>
+		</lv_obj>
+	</view>
+</component>

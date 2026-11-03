@@ -1,0 +1,162 @@
+<widget>
+	<previews>
+		<preview width="1024" height="600" />
+	</previews>
+	<styles>
+		<style name="style_wd_meal" width="100%" height="100%" bg_color="0x271f16" bg_opa="255" />
+		<style
+			name="style_recipe_cont"
+			width="1024"
+			height="530"
+			bg_opa="0"
+			border_width="0"
+			pad_all="0"
+			pad_left="340"
+			pad_right="40"
+			pad_column="20"
+			layout="flex"
+		/>
+		<style
+			name="style_expanded"
+			width="100%"
+			height="100%"
+			radius="0"
+			border_width="0"
+			bg_opa="0"
+			bg_color="0x000"
+			bg_image_recolor="0x000"
+			bg_image_recolor_opa="20%"
+			pad_all="0"
+		/>
+		<style
+			name="style_favorite_cont"
+			width="280"
+			height="480"
+			layout="flex"
+			flex_main_place="end"
+			flex_flow="column"
+			pad_all="0"
+			pad_bottom="40"
+			pad_top="40"
+			pad_row="20"
+			radius="0"
+			border_width="0"
+			text_font="Roboto_Regular_15"
+			text_color="0xfff"
+			bg_opa="0"
+		/>
+		<style
+			name="style_scrollbar"
+			width="12"
+			radius="6"
+			bg_color="0xEEB111"
+			bg_opa="255"
+			pad_top="0"
+			pad_bottom="0"
+			pad_left="45"
+			pad_right="857"
+			length="62"
+		/>
+		<style
+			name="style_scrollbar_bg"
+			width="123"
+			height="12"
+			radius="6"
+			border_width="0"
+			bg_color="0xEEB111"
+			bg_opa="30%"
+			pad_top="0"
+			pad_bottom="0"
+			pad_right="50"
+		/>
+		<style
+			name="style_card"
+			width="300"
+			height="480"
+			radius="0"
+			border_width="0"
+			pad_all="0"
+			bg_color="0x000"
+			text_color="0xffffff"
+		/>
+	</styles>
+	<api>
+		<element access="add" name="item">
+			<arg name="title" type="string" help="Name of the meal" />
+			<arg name="description" type="string" help="Description of the meal" />
+			<arg name="background" type="image" help="Background image of the meal" />
+			<arg name="preparation_time" type="int" help="Preparation time in minutes" />
+			<arg name="cook_time" type="int" help="Cooking time in minutes" />
+			<arg name="serves" type="string" help="Number of people the meal serves" />
+			<arg name="difficulty" type="string" help="Preparation difficulty" />
+			<arg name="ingredients" type="string" help="Ingredients of the recipe" />
+			<arg name="steps" type="string" help="Preparation steps" />
+		</element>
+
+		<prop name="bind_title" type="subject" help="The subject to hold the selected recipe title" />
+		<prop name="bind_description" type="subject" help="The subject to hold the selected recipe description" />
+		<prop name="bind_difficulty" type="subject" help="The subject to hold the selected recipe difficulty" />
+		<prop name="bind_cooking" type="subject" help="The subject to hold the selected recipe cooking time (string)" />
+		<prop
+			name="bind_preparation"
+			type="subject"
+			help="The subject to hold the selected recipe preparation time (string)"
+		/>
+		<prop name="bind_serves" type="subject" help="The subject to hold the selected recipe servings" />
+		<prop name="bind_ingredients" type="subject" help="The subject to hold the selected recipe ingredients" />
+		<prop name="bind_steps" type="subject" help="The subject to hold the selected recipe preparation steps" />
+		<prop
+			name="bind_cook_time"
+			type="subject"
+			help="The subject to hold the selected recipe cooking time (int) minutes"
+		/>
+	</api>
+	<view>
+		<style name="style_wd_meal" />
+
+		<lv_obj name="favorite_cont" x="40" y="40">
+			<style name="style_favorite_cont" />
+			<lv_image src="saved_icon" />
+			<lv_label width="100%" text="Favorite Meals" style_text_font="Roboto_Medium_50" />
+			<lv_label width="60%" text="Use the mobile app to manage your meals." />
+		</lv_obj>
+
+		<lv_obj x="45" y="558">
+			<style name="style_scrollbar_bg" />
+		</lv_obj>
+
+		<lv_obj name="meal_cont" y="40">
+			<style name="style_recipe_cont" />
+			<style name="style_scrollbar" selector="scrollbar" />
+
+			<recipe_card title="Baba Ganoush" time="25 Minutes" bg_image="vegetable">
+				<subject_set_int_event subject="subject_meal_view" trigger="clicked" value="1" />
+			</recipe_card>
+			<recipe_card
+				title="Honey glazed salmon with lime and raspberries"
+				time="25 Minutes"
+				bg_image="ganoush_bg"
+			/>
+			<recipe_card title="Baba Ganoush" time="25 Minutes" bg_image="ganoush_bg" />
+		</lv_obj>
+
+		<button_icon name="button_previous" rotation="1800" align="bottom_right" x="-85" y="-10" disabled="true" />
+		<button_icon name="button_next" align="bottom_right" x="-20" y="-10" />
+
+		<lv_obj name="expanded_cont" align="center" scrollable="false" hidden="true">
+			<style name="style_expanded" />
+
+			<lv_obj name="expanded_image_cont" scrollable="false" y="40" x="340">
+				<style name="style_card" />
+				<lv_image name="expanded_image_bg" src="vegetable" align="center" />
+			</lv_obj>
+
+			<!-- <bind_flag_if_eq subject="subject_meal_view" flag="hidden" ref_value="0" /> -->
+			<recipe_info name="recipe_info" x="-400" />
+
+			<button name="select_button" text="Select Meal" x="-40" y="464" align="top_right">
+				<screen_create_event screen="options" trigger="clicked" />
+			</button>
+		</lv_obj>
+	</view>
+</widget>

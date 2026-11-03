@@ -1,0 +1,93 @@
+<widget>
+	<previews>
+		<preview width="400" height="600" style_bg_color="0x000" />
+	</previews>
+	<styles>
+		<style
+			name="style_roller"
+			width="296"
+			height="600"
+			bg_color="0xEEB111"
+			radius="0"
+			border_width="0"
+			text_color="0xececec"
+			text_font="Roboto_Medium_100"
+			text_line_space="50"
+			pad_all="0"
+		/>
+		<style
+			name="style_roller_selected"
+			height="112"
+			bg_opa="0"
+			border_width="8"
+			border_color="0xFFFFFF"
+			border_side="bottom"
+			text_color="0xFFFFFF"
+		/>
+		<style
+			name="style_overlay"
+			width="content"
+			height="content"
+			radius="0"
+			border_width="0"
+			bg_color="0x000000"
+			bg_opa="150"
+			pad_all="0"
+		/>
+		<style
+			name="style_button_set"
+			width="209"
+			height="64"
+			border_width="0"
+			radius="8"
+			text_font="Roboto_Medium_30"
+			pad_all="0"
+			shadow_width="50"
+			shadow_spread="50"
+			shadow_color="0xEEB111"
+		/>
+		<style name="style_bar" width="100%" height="8" radius="0" border_width="0" bg_color="0xFFFFFF" pad_all="0" />
+		<style name="style_button_click" bg_color="0xf6cb5f" />
+	</styles>
+	<api>
+		<prop
+			name="bind_temperature"
+			type="subject"
+			help="The subject that hold the temperature value, to be bound to the roller"
+		/>
+		<prop
+			name="bind_button_set"
+			type="subject"
+			help="The subject that to be triggered when set button is clicked"
+		/>
+	</api>
+	<view>
+		<style name="style_overlay" />
+		<lv_roller name="roller" options="180°&#10;185°&#10;190°&#10;195°&#10;200°&#10;205°&#10;210°">
+			<style name="style_roller" />
+			<style name="style_roller_selected" selector="selected" />
+
+			<lv_obj
+				align="top_mid"
+				clickable="false"
+				style_bg_color="0xEEB111"
+				style_bg_opa="200"
+				style_shadow_opa="200"
+				style_border_width="-1"
+				style_border_opa="255"
+				style_border_color="0xEEB111"
+			>
+				<style name="style_button_set" />
+			</lv_obj>
+			<lv_obj align="top_mid" y="231" clickable="false">
+				<style name="style_bar" />
+			</lv_obj>
+
+			<lv_obj name="button_set" y="496" align="top_mid">
+				<style name="style_button_set" />
+				<style name="style_button_click" selector="pressed" />
+				<lv_label text="Set" align="center" />
+			</lv_obj>
+		</lv_roller>
+	</view>
+</widget>

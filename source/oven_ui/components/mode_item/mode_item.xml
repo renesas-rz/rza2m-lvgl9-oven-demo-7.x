@@ -1,0 +1,34 @@
+<component>
+	<previews>
+		<preview width="400" style_bg_color="0x324" />
+	</previews>
+	<styles>
+		<style
+			name="style_mode_item"
+			width="378"
+			height="112"
+			pad_all="40"
+			pad_top="8"
+			pad_column="24"
+			pad_bottom="8"
+			bg_opa="0"
+			text_color="0xfff"
+			radius="0"
+			border_width="0"
+			text_font="Roboto_Medium_30"
+			layout="flex"
+			flex_cross_place="center"
+			flex_track_place="center"
+		/>
+		<style name="style_checked" text_color="0xfff" />
+	</styles>
+	<api>
+		<prop name="icon" type="image" default="grill_icon" />
+		<prop name="text" type="string" default="Conventional Cooking" />
+	</api>
+	<view>
+		<style name="style_mode_item" />
+		<lv_image src="$icon" />
+		<lv_label flex_grow="1" text="$text" />
+	</view>
+</component>

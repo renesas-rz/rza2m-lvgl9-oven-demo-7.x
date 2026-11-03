@@ -1,0 +1,102 @@
+<component>
+	<previews>
+		<preview height="600" width="600" style_bg_color="0x653452" />
+	</previews>
+	<styles>
+		<style
+			name="style_info"
+			width="400"
+			height="600"
+			bg_color="0x000000"
+			bg_opa="70%"
+			radius="0"
+			border_width="0"
+			pad_all="0"
+			flex_flow="column"
+			layout="flex"
+		/>
+		<style
+			name="style_info_back"
+			width="100%"
+			height="64"
+			pad_all="0"
+			pad_left="40"
+			pad_right="40"
+			pad_column="12"
+			radius="0"
+			border_width="0"
+			bg_color="0xffffff"
+			bg_opa="0"
+			text_color="0xffffff"
+			text_font="Roboto_Medium_30"
+			layout="flex"
+			flex_track_place="center"
+			flex_cross_place="center"
+		/>
+		<style name="style_info_back_pressed" bg_opa="127" bg_color="0xfff" />
+		<style
+			name="style_info_details"
+			flex_grow="1"
+			width="400"
+			radius="0"
+			bg_opa="0"
+			pad_top="0"
+			pad_bottom="40"
+			pad_left="40"
+			pad_right="40"
+			pad_column="10"
+			pad_row="10"
+			border_width="0"
+			layout="flex"
+			flex_flow="row_wrap"
+			text_color="0xffffff"
+			text_font="Roboto_Regular_20"
+			text_line_space="8"
+		/>
+		<style
+			name="style_scrollbar"
+			width="8"
+			height="0"
+			radius="0"
+			bg_color="0xEEB111"
+			bg_opa="255"
+			pad_top="0"
+			pad_bottom="0"
+			pad_right="0"
+			length="145"
+		/>
+	</styles>
+	<view>
+		<style name="style_info" />
+		<style name="style_blur" />
+
+		<lv_obj name="recipe_back_button">
+			<style name="style_info_back" />
+			<style name="style_info_back_pressed" selector="pressed" />
+			<style name="style_blur" />
+			<lv_image src="back_icon" />
+			<lv_label text="Back" style_pad_top="5" />
+
+			<!-- <subject_set_int_event subject="subject_meal_view" trigger="clicked" value="0" /> -->
+		</lv_obj>
+		<lv_obj name="recipe_scroll_cont">
+			<style name="style_info_details" />
+			<style name="style_scrollbar" selector="scrollbar" />
+
+			<meta_card icon="difficulty_icon" title="Ability" value="subject_recipe_ability" />
+			<meta_card icon="clock_icon" title="Cooking time" value="subject_recipe_cook_time" />
+			<meta_card icon="preparation_icon" title="Preparation time" value="subject_recipe_prep_time" />
+			<meta_card icon="serving_icon" title="Serves" value="subject_recipe_serves" />
+
+			<lv_obj width="100%" height="content" style_pad_all="0" style_pad_top="20">
+				<style name="style_info_details" />
+				<lv_label name="recipe_title" width="100%" style_text_font="Roboto_Medium_40" />
+				<lv_label name="recipe_description" width="100%" />
+				<lv_label width="100%" text="Ingredients" style_text_font="Roboto_Medium_30" style_pad_top="10" />
+				<lv_label name="recipe_ingredients" width="100%" />
+				<lv_label width="100%" text="Steps" style_text_font="Roboto_Medium_30" style_pad_top="10" />
+				<lv_label name="recipe_steps" width="100%" />
+			</lv_obj>
+		</lv_obj>
+	</view>
+</component>

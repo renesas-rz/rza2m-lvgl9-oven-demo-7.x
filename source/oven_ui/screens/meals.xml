@@ -1,0 +1,71 @@
+<screen>
+	<view style_bg_opa="0">
+		<wd_meal
+			bind_title="subject_recipe_title"
+			bind_description="subject_recipe_description"
+			bind_serves="subject_recipe_serves"
+			bind_cooking="subject_recipe_cook_time"
+			bind_preparation="subject_recipe_prep_time"
+			bind_difficulty="subject_recipe_ability"
+			bind_ingredients="subject_recipe_ingredients"
+			bind_steps="subject_recipe_steps"
+			bind_cook_time="subject_cook_time"
+		>
+			<wd_meal-item
+				title="Classic Margherita Stone-Baked Pizza"
+				description="A crisp, golden pizza base topped with fresh tomato, melted mozzarella, and fragrant basil. Simple ingredients baked at high heat create an authentic Italian-style Margherita right at home."
+				background="pizza"
+				cook_time="12"
+				preparation_time="15"
+				difficulty="Easy"
+				serves="2-3 people"
+				ingredients="Pizza dough - 1 ball (250 g)&#10;Tomato passata - 120 g&#10;Fresh mozzarella - 125 g&#10;Extra-virgin olive oil - 1 tbsp&#10;Fresh basil leaves - handful&#10;Salt - pinch"
+				steps="1. Spread the tomato passata evenly over the rolled-out dough.&#10;2. Tear the mozzarella into pieces and distribute across the base.&#10;3. Drizzle with olive oil and sprinkle lightly with salt.&#10;4. Place the pizza on a baking tray or preheated stone.&#10;5. Insert into the oven.&#10;6. Select Bake, set 220°C, and cook for 12 minutes or until the crust is golden.&#10;7. Remove from the oven and top with fresh basil leaves.&#10;8. Slice and serve immediately."
+			/>
+			<wd_meal-item
+				title="Lemon Herb Baked Salmon Fillets"
+				description="Fresh salmon is seasoned simply with lemon, herbs, and olive oil. Baking gently keeps the fillets moist and flaky, making this a light, flavorful everyday dish."
+				background="salmon"
+				cook_time="14"
+				preparation_time="10"
+				difficulty="Easy"
+				serves="4 people"
+				ingredients="Salmon fillets - 4 pieces (150 g each)&#10;Lemon - 1&#10;Olive oil - 1 tbsp&#10;Fresh dill - small bunch&#10;Garlic - 1 clove, minced&#10;Salt and black pepper - to taste"
+				steps="1. Place the salmon fillets on a lined baking tray.&#10;2. Drizzle with olive oil and sprinkle with garlic, salt, and pepper.&#10;3. Slice the lemon and lay the slices on top of each fillet.&#10;4. Add small sprigs of dill.&#10;5. Insert the tray into the oven.&#10;6. Select Bake, set 200°C, and cook for 14 minutes.&#10;7. Remove carefully and squeeze a little fresh lemon juice over the top.&#10;8. Serve with extra dill if desired."
+			/>
+			<wd_meal-item
+				title="Garlic Butter Roasted Chicken Thighs"
+				description="These chicken thighs are coated in a simple garlic butter and roasted until crisp and golden. A comforting and flavorful dish with minimal preparation."
+				background="chicken"
+				cook_time="30"
+				preparation_time="15"
+				difficulty="Medium"
+				serves="4 people"
+				ingredients="Chicken thighs - 6 pieces&#10;Butter - 40 g, melted&#10;Garlic - 2 cloves, minced&#10;Paprika - 1 tsp&#10;Thyme - 1 tsp&#10;Salt and pepper - to taste"
+				steps="1. Mix melted butter with garlic, paprika, thyme, salt, and pepper.&#10;2. Place chicken thighs on a baking tray and brush generously with the garlic butter.&#10;3. Add an extra sprinkle of paprika for color if desired.&#10;4. Insert the tray into the oven.&#10;5. Select Roast, set 190°C, and cook for 30 minutes.&#10;6. Halfway through, spoon juices over the chicken.&#10;7. When the skin is crisp and golden, remove from the oven.&#10;8. Let rest 5 minutes before serving."
+			/>
+			<wd_meal-item
+				title="Oven-Roasted Vegetable Medley"
+				description="A colorful mix of carrots, zucchini, peppers, and onions roasted until lightly caramelized. A versatile side dish that pairs with almost any main."
+				background="vegetable"
+				cook_time="9"
+				preparation_time="10"
+				difficulty="Easy"
+				serves="4 people"
+				ingredients="Carrots - 2&#10;Zucchini - 2&#10;Red pepper - 1&#10;Yellow pepper - 1&#10;Red onion - 1&#10;Olive oil - 2 tbsp&#10;Salt and pepper - to taste"
+				steps="1. Cut all vegetables into even-sized pieces.&#10;2. Place onto a baking tray and drizzle with olive oil.&#10;3. Season with salt and pepper and toss to coat.&#10;4. Spread vegetables into a single layer.&#10;5. Insert tray into the oven.&#10;6. Select Bake, set 200°C, and cook for 18 minutes, stirring once halfway.&#10;7. Remove when edges begin to brown slightly.&#10;8. Serve immediately as a side or warm salad."
+			/>
+			<wd_meal-item
+				title="Molten Chocolate Lava Cakes"
+				description="Soft individual chocolate cakes with a warm, molten center. Perfectly indulgent yet quick to prepare - an ideal dessert for any occasion."
+				background="lava_cake"
+				cook_time="60"
+				preparation_time="12"
+				difficulty="Medium"
+				serves="4 people"
+				ingredients="Dark chocolate - 120 g&#10;Butter - 80 g&#10;Eggs - 2 whole + 2 yolks&#10;Sugar - 50 g&#10;Flour - 30 g&#10;Cocoa powder - for dusting"
+				steps="1. Melt chocolate and butter together in a heatproof bowl.&#10;2. Whisk in the sugar, eggs, and yolks until smooth.&#10;3. Fold in the flour gently.&#10;4. Grease four ramekins and dust with cocoa powder.&#10;5. Pour batter evenly into the ramekins.&#10;6. Insert into the oven.&#10;7. Select Bake, set 210°C, and cook for 9 minutes until edges set and centers remain soft.&#10;8. Rest 1 minute, turn out onto plates, and serve warm."
+			/>
+		</wd_meal>
+	</view>
+</screen>

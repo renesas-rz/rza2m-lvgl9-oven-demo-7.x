@@ -1,0 +1,150 @@
+<globals>
+	<api>
+		<!-- Add <enumdefs> here -->
+	</api>
+
+	<consts>
+		<!-- Add <px>, <int>, <color> etc here -->
+		<int name="screen_change_speed" value="500" />
+	</consts>
+
+	<styles>
+		<!-- Add <style> tags here -->
+		<style name="style_blur" />
+	</styles>
+
+	<subjects>
+		<!-- Add <int>, <string>, or <float> subjects here -->
+
+		<int name="subject_roller_view" value="0" min_value="0" max_value="1" />
+		<int name="subject_meal_view" value="0" min_value="0" max_value="1" />
+		<int name="subject_cook_mode_view" value="0" min_value="0" max_value="1" />
+		<int name="subject_time_view" value="0" min_value="0" max_value="1" />
+
+		<int name="subject_temperature" value="190" />
+		<int name="subject_cook_time" value="160" help="Cooking time in minutes" />
+		<string name="subject_cook_time_fmt" value="02h 40m" />
+
+		<int name="subject_timer_trigger" value="0" />
+		<int name="subject_timer_stop" value="0" />
+		<int name="subject_timer_add" value="0" />
+		<int name="subject_timer_bell_view" value="0" />
+		<int name="subject_timer_3min_view" value="0" />
+		<int name="subject_show_perf_sidebar" value="0" />
+		<int name="subject_gpu_enable" value="1" />
+
+		<string name="subject_recipe_prep_time" value="25 minutes" />
+		<string name="subject_recipe_cook_time" value="15 minutes" />
+		<string name="subject_recipe_serves" value="4 people" />
+		<string name="subject_recipe_ability" value="Easy" />
+		<string name="subject_recipe_title" value="Baba Ganoush" />
+		<string
+			name="subject_recipe_description"
+			value="A simple ingredient like aubergine becomes something unique with the right combination of herbs and spices that create a carousel of sensations when you taste this simple but intriguing recipe"
+		/>
+		<string
+			name="subject_recipe_ingredients"
+			value="Pizza dough - 1 ball (250 g)&#10;Tomato passata - 120 g&#10;Fresh mozzarella - 125 g&#10;Extra-virgin olive oil - 1 tbsp&#10;Fresh basil leaves - handful&#10;Salt - pinch"
+		/>
+		<string
+			name="subject_recipe_steps"
+			value="Spread the tomato passata evenly over the rolled-out dough.&#10;Tear the mozzarella into pieces and distribute across the base.&#10;Drizzle with olive oil and sprinkle lightly with salt.&#10;Place the pizza on a baking tray or preheated stone.&#10;Insert into the oven.&#10;Select Bake, set 220°C, and cook for 12 minutes or until the crust is golden.&#10;Remove from the oven and top with fresh basil leaves.&#10;Slice and serve immediately."
+		/>
+	</subjects>
+
+	<images>
+		<!-- Add <file> or <data> tags here -->
+
+		<data name="clock_small_icon" src_path="images/icon_clock_small.png" color_format="rgb565a8" />
+		<data name="clock_icon" src_path="images/icon_clock.png" color_format="rgb565a8" />
+		<data name="heat_icon" src_path="images/icon_heat.png" color_format="rgb565a8" />
+		<data name="back_icon" src_path="images/icon_back_arrow.png" color_format="rgb565a8" />
+
+		<data name="perf_icon" src_path="images/icon_perf.png" color_format="rgb565a8" />
+		<data name="grill_icon" src_path="images/icon_grill.png" color_format="rgb565a8" />
+		<data name="bottom_heat_icon" src_path="images/icon_bottom_heat.png" color_format="rgb565a8" />
+		<data name="conventional_icon" src_path="images/icon_conventional.png" color_format="rgb565a8" />
+		<data name="defrost_icon" src_path="images/icon_defrost.png" color_format="rgb565a8" />
+		<data name="true_fan_icon" src_path="images/icon_true_fan.png" color_format="rgb565a8" />
+		<data name="moist_fan_icon" src_path="images/icon_moist_fan.png" color_format="rgb565a8" />
+		<data name="turbo_grill_icon" src_path="images/icon_turbo_grill.png" color_format="rgb565a8" />
+
+		<data name="arrow_icon" src_path="images/icon_arrow.png" color_format="rgb565a8" />
+		<data name="saved_icon" src_path="images/icon_saved.png" color_format="rgb565a8" />
+		<data name="serving_icon" src_path="images/icon_serving.png" color_format="rgb565a8" />
+		<data name="preparation_icon" src_path="images/icon_preparation.png" color_format="rgb565a8" />
+		<data name="difficulty_icon" src_path="images/icon_difficulty.png" color_format="rgb565a8" />
+		<data name="bell_icon" src_path="images/bell_icon.png" color_format="rgb565a8" />
+
+		<data name="ganoush_bg" src_path="images/bg_ganoush.png" color_format="rgb565" />
+
+		<data name="lava_cake" src_path="images/lava_cake.png" color_format="rgb565" />
+		<data name="salmon" src_path="images/salmon.png" color_format="rgb565" />
+		<data name="vegetable" src_path="images/vegetable.png" color_format="rgb565" />
+		<data name="pizza" src_path="images/pizza.png" color_format="rgb565" />
+		<data name="chicken" src_path="images/chicken.png" color_format="rgb565" />
+		<data name="fire_sparks" src_path="images/fire_sparks_bg.png" color_format="rgb565" />
+
+		<data name="spark1" src_path="images/spark1.png" color_format="argb8888" />
+		<data name="spark2" src_path="images/spark2.png" color_format="argb8888" />
+
+		<data name="perf_button_image" src_path="images/performance_button.png" color_format="rgb565a8" />
+		<data name="close_button_image" src_path="images/close_button.png" color_format="rgb565a8" />
+
+		<data name="whirlpool_logo" src_path="images/whirlpool_logo.png" color_format="rgb565" />
+	</images>
+
+	<fonts>
+		<!-- Add <bin> , <tiny_ttf>, <freetype> tags here -->
+
+		<bin
+			name="Roboto_Regular_15"
+			size="15"
+			src_path="fonts/Roboto-Regular.ttf"
+			as_file="false"
+			bpp="8"
+			symbols="•"
+		/>
+		<bin
+			name="Roboto_Regular_20"
+			size="20"
+			src_path="fonts/Roboto-Regular.ttf"
+			as_file="false"
+			bpp="8"
+			symbols="°"
+		/>
+
+		<bin name="Roboto_Medium_15" size="15" src_path="fonts/Roboto-Medium.ttf" as_file="false" bpp="8" />
+
+		<bin
+			name="Roboto_Medium_30"
+			size="30"
+			src_path="fonts/Roboto-Medium.ttf"
+			as_file="false"
+			bpp="8"
+			symbols="°"
+			range="0x20-0x7F"
+		/>
+		<bin name="Roboto_Medium_40" size="40" src_path="fonts/Roboto-Medium.ttf" as_file="false" bpp="8" symbols="°" />
+		<bin name="Roboto_Medium_50" size="50" src_path="fonts/Roboto-Medium.ttf" as_file="false" bpp="8" symbols="°" />
+		<bin
+			name="Roboto_Medium_100"
+			size="100"
+			src_path="fonts/Roboto-Medium.ttf"
+			as_file="false"
+			range="0x20,0x30-0x39"
+			symbols="°:hm "
+			bpp="8"
+		/>
+		<bin
+			name="Roboto_Medium_160"
+			size="160"
+			src_path="fonts/Roboto-Medium.ttf"
+			as_file="false"
+			range="0x20,0x30-0x39"
+			symbols="°:hm "
+			bpp="8"
+		/>
+		<bin name="Roboto_Bold_15" size="15" src_path="fonts/Roboto-Bold.ttf" as_file="false" bpp="8" />
+	</fonts>
+</globals>

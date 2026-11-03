@@ -1,0 +1,49 @@
+<widget>
+	<api>
+		<enumdef name="particle_system_emission_dir">
+			<enum name="up" />
+			<enum name="down" />
+			<enum name="left" />
+			<enum name="right" />
+			<enum name="inside" />
+			<enum name="radial" />
+		</enumdef>
+
+		<prop name="gravity" type="int" />
+
+		<element name="emission" access="set">
+			<prop name="width" type="int" />
+			<prop name="height" type="int" />
+			<prop name="x" type="int" />
+			<prop name="y" type="int" />
+			<prop name="period" type="int" />
+			<prop name="period_randomness" type="int" />
+			<prop name="dir" type="enum:particle_system_emission_dir" />
+		</element>
+		<element name="particle" access="set">
+			<prop name="src" type="image" />
+			<prop name="angle_jitter" type="int" />
+			<prop name="lifetime" type="int" />
+			<prop name="lifetime_jitter" type="int" />
+			<prop name="opa_start" type="opa" />
+			<prop name="opa_start_jitter" type="opa" />
+			<prop name="opa_end" type="opa" />
+			<prop name="opa_end_jitter" type="opa" />
+			<prop name="scale_start" type="int" />
+			<prop name="scale_start_jitter" type="int" />
+			<prop name="scale_end" type="int" />
+			<prop name="scale_end_jitter" type="int" />
+			<prop name="speed" type="int" />
+			<prop name="speed_jitter" type="int" />
+			<prop name="acceleration" type="int" />
+			<prop name="acceleration_jitter" type="int" />
+			<prop name="motion_spin" type="int" />
+			<prop name="motion_spin_jitter" type="int" />
+			<prop name="drift_x" type="int" />
+			<prop name="drift_x_jitter" type="int" />
+			<prop name="drift_y" type="int" />
+			<prop name="drift_y_jitter" type="int" />
+			<prop name="face_motion_dir" type="bool" />
+		</element>
+	</api>
+</widget>

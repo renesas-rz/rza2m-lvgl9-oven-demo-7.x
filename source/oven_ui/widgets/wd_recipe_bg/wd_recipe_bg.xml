@@ -1,0 +1,21 @@
+<widget>
+	<previews>
+		<preview height="600" width="1024" />
+	</previews>
+	<styles>
+		<style name="style_bg_image" width="100%" height="100%" bg_opa="0" />
+	</styles>
+	<view>
+		<style name="style_bg_image" />
+		<lv_image name="image" src="lava_cake" align="center" />
+		<lv_obj
+			name="recipe_bg_overlay"
+			width="100%"
+			height="100%"
+			style_bg_opa="140"
+			style_bg_color="0x000"
+			style_border_width="0"
+			style_radius="0"
+		/>
+	</view>
+</widget>

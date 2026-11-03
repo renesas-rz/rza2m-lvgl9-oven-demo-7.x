@@ -1,0 +1,78 @@
+<screen>
+	<styles>
+		<style name="style_baking" bg_color="0x000000" />
+		<style
+			name="style_bell_cont"
+			width="content"
+			height="content"
+			radius="0"
+			bg_opa="0"
+			border_width="0"
+			pad_all="0"
+		/>
+	</styles>
+
+	<animations>
+		<timeline name="open">
+			<animation target="timer" delay="500" duration="3000" prop="opa" start="0" end="255" early_apply="true" />
+			<animation target="stop" delay="500" duration="3000" prop="opa" start="0" end="255" early_apply="true" />
+			<animation
+				target="particle_system"
+				delay="500"
+				duration="3000"
+				prop="opa"
+				start="0"
+				end="255"
+				early_apply="true"
+			/>
+		</timeline>
+	</animations>
+
+	<view scrollable="false">
+		<play_timeline_event timeline="open" trigger="screen_loaded" target="self" />
+		<style name="style_baking" />
+
+		<wd_timer
+			name="timer"
+			align="center"
+			bind_recipe_title="subject_recipe_title"
+			bind_trigger="subject_timer_trigger"
+			bind_button_stop="subject_timer_stop"
+			bind_button_add="subject_timer_add"
+			bind_3min_view="subject_timer_3min_view"
+			bind_bell_view="subject_timer_bell_view"
+			bind_cook_temperature="subject_temperature"
+			bind_cook_time="subject_cook_time"
+		/>
+
+		<lv_obj x="48" y="472">
+			<style name="style_bell_cont" />
+			<bind_flag_if_eq subject="subject_timer_bell_view" flag="hidden" ref_value="0" />
+			<lv_image name="bell_icon" style_transform_pivot_x="40" style_transform_pivot_y="7" src="bell_icon" />
+		</lv_obj>
+
+		<button text="+3 min" x="40" y="464" checked="true">
+			<bind_flag_if_eq subject="subject_timer_3min_view" flag="hidden" ref_value="0" />
+			<subject_set_int_event subject="subject_timer_add" trigger="clicked" value="1" />
+		</button>
+
+		<button name="stop" text="Stop" x="-40" y="464" align="top_right">
+			<subject_set_int_event subject="subject_timer_stop" trigger="clicked" value="1" />
+			<bind_flag_if_eq subject="subject_timer_bell_view" flag="hidden" ref_value="1" />
+
+			<screen_create_event
+				screen="meals"
+				anim_type="fade_in"
+				delay="0"
+				duration="#screen_change_speed"
+				trigger="clicked"
+			/>
+		</button>
+
+		<!-- <subject_set_int_event subject="subject_timer_3min_view" trigger="screen_loaded" value="0" /> -->
+		<subject_set_int_event subject="subject_timer_trigger" trigger="screen_loaded" value="1" />
+		<!-- <subject_set_int_event subject="subject_timer_trigger" trigger="clicked" value="1" /> -->
+
+		<particle_system name="particle_system" clickable="false" />
+	</view>
+</screen>

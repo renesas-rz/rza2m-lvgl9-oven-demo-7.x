@@ -1,0 +1,76 @@
+<component>
+	<previews>
+		<preview height="600" width="600" style_bg_color="0x653452" />
+	</previews>
+	<styles>
+		<style
+			name="style_main"
+			width="400"
+			height="600"
+			bg_color="0x000000"
+			bg_opa="70%"
+			radius="0"
+			border_width="0"
+			pad_all="40"
+			flex_flow="column"
+			layout="flex"
+			text_font="Roboto_Regular_15"
+			text_color="0xfff"
+		/>
+		<style
+			name="style_scrollbar"
+			width="8"
+			height="0"
+			radius="0"
+			bg_color="0xEEB111"
+			bg_opa="255"
+			pad_top="40"
+			pad_bottom="0"
+			pad_right="0"
+		/>
+		<style name="style_switch_indicator" bg_color="0xEEB111" />
+	</styles>
+	<view>
+		<style name="style_main" />
+		<style name="style_blur" />
+		<style name="style_scrollbar" selector="scrollbar" />
+
+		<bind_flag_if_eq subject="subject_show_perf_sidebar" flag="hidden" ref_value="0" />
+
+		<lv_image src="perf_icon" />
+		<lv_label
+			width="100%"
+			text="Smart oven demo developed in LVGL Pro, running on the RZ/A2M with Linux. Rendering is accelerated by the D/AVE 2D GPU. Runs from QSPI flash, on-chip RAM and HyperRAM, with no DDR."
+		/>
+		<lv_label text="Enable GPU (D/AVE 2D)" style_text_font="Roboto_Medium_30" />
+
+		<lv_switch bind_checked="subject_gpu_enable">
+			<style name="style_switch_indicator" selector="indicator|checked" />
+		</lv_switch>
+
+		<lv_label text="Hardware" style_text_font="Roboto_Medium_30" />
+		<lv_label
+			width="100%"
+			text="• Renesas RZ/A2M EVK&#10;• MPU: 528MHz ARM Cortex-A9 (single core)&#10;• RAM: 4MB on-chip, 8MB external HyperRAM&#10;• Flash: 64MB QSPI, app runs in place (XIP)&#10;• GPU: D/AVE 2D (shapes, icons, sparks)&#10;• OS: Linux 7.3"
+		/>
+		<lv_label text="Display" style_text_font="Roboto_Medium_30" />
+		<lv_label
+			width="100%"
+			text="• Resolution: 800x480&#10;• Display Size: 7&quot; (RSK TFT)&#10;• Interface: Parallel RGB&#10;• Color Depth: 16-bit"
+		/>
+		<lv_label text="Performance" style_text_font="Roboto_Medium_30" />
+		<lv_label text="• Measuring..." />
+		<lv_label text="Flash Usage" style_text_font="Roboto_Medium_30" />
+		<lv_label
+			width="100%"
+			text="• Images: 6.7MB (RGB565, scaled for 800x480)&#10;• Fonts: 0.2MB&#10;• Stored in QSPI flash and read in place (XIP)"
+		/>
+		<lv_label text="RAM Usage" style_text_font="Roboto_Medium_30" />
+		<lv_label text="• App RAM usage (measured): ~0.2MB in HyperRAM&#10;• 2 frame buffers: 1.5MB in on-chip RAM&#10;" />
+		<lv_label text="Graphics Features" style_text_font="Roboto_Medium_30" />
+		<lv_label
+			width="100%"
+			text="• Screen transitions with animations&#10;• Naturally scrolling containers&#10;• Parallax effect on meal scrolling&#10;• Background Blurring&#10;• Particle system for sparks&#10;• Various layouts for responsivity"
+		/>
+	</view>
+</component>

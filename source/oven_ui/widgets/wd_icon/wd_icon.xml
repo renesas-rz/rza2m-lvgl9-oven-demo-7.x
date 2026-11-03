@@ -1,0 +1,10 @@
+<widget>
+	<styles>
+		<style name="style_image_cont" width="content" height="content" />
+		<style name="style_image" image_recolor="0xEEB111" image_recolor_opa="255" />
+	</styles>
+	<view extends="lv_image" src="grill_icon">
+		<style name="style_image_cont" />
+		<style name="style_image" selector="checked" />
+	</view>
+</widget>

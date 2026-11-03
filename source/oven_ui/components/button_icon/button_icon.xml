@@ -1,0 +1,20 @@
+<component>
+	<previews>
+		<preview style_bg_color="0x435" />
+	</previews>
+	<styles>
+		<style name="style_button_icon" width="content" height="content" bg_opa="0" border_width="0" pad_all="12" />
+		<style name="style_button_icon_pressed" bg_opa="127" />
+		<style name="style_button_icon_disabled" image_opa="127" />
+	</styles>
+	<api>
+		<prop name="rotation" type="int" default="0" />
+	</api>
+	<view state_trickle="true">
+		<style name="style_button_icon" />
+		<style name="style_button_icon_pressed" selector="pressed" />
+		<lv_image src="arrow_icon" rotation="$rotation">
+			<style name="style_button_icon_disabled" selector="disabled" />
+		</lv_image>
+	</view>
+</component>
