@@ -36,6 +36,37 @@ static void gpu_switch_cb(lv_observer_t * o, lv_subject_t * s)
     lv_obj_invalidate(lv_screen_active());   /* redraw everything with the new renderer */
 }
 
+/*
+ * Touch hot-plug: a USB touch monitor can enumerate after the app starts, or be
+ * unplugged and plugged in again. Check the device node once a second and open
+ * it when it appears. LVGL deletes the input device itself when it goes away.
+ */
+static const char * s_touch_path;
+static lv_display_t * s_touch_disp;
+static lv_indev_t * s_touch;
+
+static void touch_deleted_cb(lv_event_t * e)
+{
+    LV_UNUSED(e);
+    s_touch = NULL;
+    printf("touch: %s removed\n", s_touch_path);
+}
+
+static void touch_open(void)
+{
+    s_touch = lv_evdev_create(LV_INDEV_TYPE_POINTER, s_touch_path);
+    if(s_touch == NULL) return;
+    lv_indev_set_display(s_touch, s_touch_disp);
+    lv_indev_add_event_cb(s_touch, touch_deleted_cb, LV_EVENT_DELETE, NULL);
+    printf("touch: %s connected\n", s_touch_path);
+}
+
+static void touch_watch_cb(lv_timer_t * t)
+{
+    LV_UNUSED(t);
+    if(s_touch == NULL && access(s_touch_path, R_OK) == 0) touch_open();
+}
+
 int main(int argc, char ** argv)
 {
     (void)argc;
@@ -71,9 +102,11 @@ int main(int argc, char ** argv)
         printf("Frame-rate cap: %d FPS (refresh every %u ms)\n", atoi(mf), (unsigned)period);
     }
 
-    lv_indev_t * touch = lv_evdev_create(LV_INDEV_TYPE_POINTER, ev);
-    if(touch == NULL) fprintf(stderr, "warning: no touch input on %s\n", ev);
-    else lv_indev_set_display(touch, disp);
+    s_touch_path = ev;
+    s_touch_disp = disp;
+    touch_open();
+    if(s_touch == NULL) printf("touch: %s not present yet, waiting for it\n", ev);
+    lv_timer_create(touch_watch_cb, 1000, NULL);
 
     oven_ui_init("");
     if(strcmp(getenv_def("OVEN_GPU", "1"), "0") == 0 || !lv_draw_dave2d_a2m_available())

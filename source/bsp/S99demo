@@ -5,6 +5,8 @@ case "$1" in
   start) echo "Starting oven demo"
          echo 0 > /sys/class/vtconsole/vtcon1/bind
          cat /dev/zero > /dev/fb0 2>/dev/null
+         # RGB-to-HDMI board (TFP410 at I2C 0x3c): power on, falling edge, 24-bit, H/V sync. No effect with the LCD.
+         i2cset -y 0 0x3c 0x08 0x35 2>/dev/null
          A2M_MAX_FPS=30 $APP > /dev/console 2>&1 & ;;
   stop)  killall oven_a2m 2>/dev/null ;;
   restart) $0 stop; sleep 1; $0 start ;;
